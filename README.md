@@ -1,27 +1,27 @@
 # Auto Install MikroTik CHR di Docker
-- [Readme EN](https://github.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/blob/main/README.eng.md)
+- [Readme EN](https://github.com/esterabigail/Auto-Install-MikroTik-CHR-on-Docker/blob/main/README.eng.md)
 - Ini adalah skrip otomatis yang dapat menjalankan image Mikrotik CHR di dalam container Docker pada VPS non-KVM.
 
 # Membangun Image Dengan Skrip Otomatis
 ### RouterOS 6
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/main/RoS6/v6.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/esterabigail/Auto-Install-MikroTik-CHR-on-Docker/main/RoS6/v6.sh)
 ```
 
 ### RouterOS 7
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/main/RoS7/v7.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/esterabigail/Auto-Install-MikroTik-CHR-on-Docker/main/RoS7/v7.sh)
 ```
 
 # Pull Langsung Dari Repository Docker Hub
 ### RouterOS 6
 Pull
 ```
-docker pull safrinnetwork/ros6
+docker pull esterabigail/ros6
 ```
 Menjalankan Image Kedalam Container
 ```
-sudo docker run --name ros6 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 safrinnetwork/ros6:latest
+sudo docker run --name ros6 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 esterabigail/ros6:latest
 ```
 Contoh Menjalankan Image Kedalam Container Dengan Pemetaan Port
 ```
@@ -53,11 +53,11 @@ docker run --name ros6 --restart unless-stopped \
 ### RouterOS 7
 Pull
 ```
-docker pull safrinnetwork/ros7
+docker pull esterabigail/ros7
 ```
 Menjalankan Image Kedalam Container
 ```
-sudo docker run --name ros7 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 safrinnetwork/ros7:latest
+sudo docker run --name ros7 --restart unless-stopped -p 8291:8291 -p 8728:8728 -p 8729:8729 -p 2222:22 -p 8080:80 -p 443:443 -p 2121:21 esterabigail/ros7:latest
 ```
 Contoh Menjalankan Image Kedalam Container Dengan Pemetaan Port
 ```
@@ -91,21 +91,21 @@ Jika anda ingin membangun image dengan Dockerfile anda bisa langsung melakukan c
 
 Cloning Repository
 ```
-git clone https://github.com/safrinnetwork/Auto-Install-MikroTik-CHR-on-Docker/
+git clone https://github.com/esterabigail/Auto-Install-MikroTik-CHR-on-Docker/
 ```
 RouterOS 6
 ```
 cd RoS6
 ```
 ```
-docker build -t safrinnetwork/ros6 .
+docker build -t esterabigail/ros6 .
 ```
 RouterOS 7
 ```
 cd RoS7
 ```
 ```
-docker build -t safrinnetwork/ros7 .
+docker build -t esterabigail/ros7 .
 ```
 Kemudian anda bisa menjalankan container dengan image yang sudah dibuat dari Dockerfile dengan contoh perintah menjalankan image yang ada di repository ini
 
